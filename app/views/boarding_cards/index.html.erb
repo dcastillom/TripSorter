@@ -1,0 +1,19 @@
+<div class="span8 offset2">
+<h1>Trip Sorter</h1>
+<h3>Please, choose your journey</h3>
+
+<table class="table">
+  <tbody>
+    <% @boarding_cards.sort.each do |boarding_card| %>
+      <tr>
+        <td><%= boarding_card.journey %></td>
+        <td><%= link_to "Show boarding card", boarding_card, :class => 'btn btn-warning btn-block'%></td><!--
+        <td><%= link_to 'Edit', edit_boarding_card_path(boarding_card) %></td> 
+        <td><%= link_to 'Destroy', boarding_card, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<!--%= link_to 'New Boarding card', new_boarding_card_path %-->

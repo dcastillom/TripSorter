@@ -1,0 +1,50 @@
+<div class="span8 offset2 hgroup">
+<h1>Trip Sorter</h1>
+<h3><%= @boarding_card.journey %></h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @boarding_card.from %>
+</p>
+
+<p>
+  <strong>Destiny:</strong>
+  <%= @boarding_card.to %>
+</p>
+
+<p>
+  <strong>Transport mode:</strong>
+  <%= @boarding_card.transport_mode %>
+</p>
+
+<p>
+  <strong>Travel locator:</strong>
+  <%= @boarding_card.travel_locator %>
+</p>
+
+<p>
+  <strong>Gate:</strong>
+  <%= @boarding_card.gate %>
+</p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @boarding_card.seat %>
+</p>
+
+<p>
+  <strong>Baggage reclaim:</strong>
+  <%= @boarding_card.baggage_reclaim %>
+</p>
+
+<p class="textarea">
+  <strong>Directions :</strong>
+  <%= @boarding_card.directions %>
+</p>
+
+<!--%= link_to 'Edit', edit_boarding_card_path(@boarding_card) %--> 
+<%= link_to "Go Back", boarding_cards_path, :class => 'btn btn-warning'%>
+</div>
+

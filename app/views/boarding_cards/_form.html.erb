@@ -1,0 +1,53 @@
+<%= form_for(@boarding_card) do |f| %>
+  <% if @boarding_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boarding_card.errors.count, "error") %> prohibited this boarding_card from being saved:</h2>
+
+      <ul>
+      <% @boarding_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :journey %><br>
+    <%= f.text_field :journey %>
+  </div>
+  <div class="field">
+    <%= f.label :from %><br>
+    <%= f.text_field :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br>
+    <%= f.text_field :to %>
+  </div>
+  <div class="field">
+    <%= f.label :transport_mode %><br>
+    <%= f.text_field :transport_mode %>
+  </div>
+  <div class="field">
+    <%= f.label :travel_locator %><br>
+    <%= f.text_field :travel_locator %>
+  </div>
+  <div class="field">
+    <%= f.label :seat %><br>
+    <%= f.text_field :seat %>
+  </div>
+  <div class="field">
+    <%= f.label :gate %><br>
+    <%= f.text_field :gate %>
+  </div>
+  <div class="field">
+    <%= f.label :baggage_reclaim %><br>
+    <%= f.text_field :baggage_reclaim %>
+  </div>
+  <div class="field">
+    <%= f.label :directions %><br>
+    <%= f.text_field :directions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
