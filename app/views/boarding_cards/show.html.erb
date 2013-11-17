@@ -1,4 +1,4 @@
-<div class="span8 offset2 hgroup">
+<div class="span8 offset2">
 <h1>Trip Sorter</h1>
 <h3><%= @boarding_card.journey %></h3>
 
@@ -39,12 +39,19 @@
   <%= @boarding_card.baggage_reclaim %>
 </p>
 
-<p class="textarea">
-  <strong>Directions :</strong>
-  <%= @boarding_card.directions %>
+<p>
+  <strong>Directions:</strong>
 </p>
 
-<!--%= link_to 'Edit', edit_boarding_card_path(@boarding_card) %--> 
-<%= link_to "Go Back", boarding_cards_path, :class => 'btn btn-warning'%>
+<ul>
+    <% @boarding_cards.sort.each do |card| %>
+      <% if card.id >= @boarding_card.id%>
+        <li><%= card.directions %></li>
+      <% end %>
+    <% end %>
+</ul>
+
+<br><%= link_to "Go Back", boarding_cards_path, :class => 'btn btn-warning'%>
+
 </div>
 

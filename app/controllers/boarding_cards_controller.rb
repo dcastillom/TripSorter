@@ -10,7 +10,7 @@ class BoardingCardsController < ApplicationController
   # GET /boarding_cards/1
   # GET /boarding_cards/1.json
   def show
-    @id_card = :id
+    @boarding_cards = BoardingCard.all
   end
 
   # GET /boarding_cards/new
