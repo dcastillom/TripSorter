@@ -4,12 +4,21 @@
 
 <table class="table">
   <tbody>
-    <% @boarding_cards.sort.each do |boarding_card| %>
+    <% @boarding_cards.each do |boarding_card| %>
       <tr>
         <td><%= boarding_card.journey %></td>
-        <td><%= link_to "Show boarding card", boarding_card, :class => 'btn btn-warning btn-block'%></td>
+        <!--td><%= link_to "Show boarding card", boarding_card, :class => 'btn btn-warning btn-block'%></td-->
+
+
+        <td class="btn btn-small"><%= link_to 'show', boarding_card %></td>
+        <td class="btn btn-small"><%= link_to 'edit', edit_boarding_card_path(boarding_card) %></td>
+        <td class="btn btn-small"><%= link_to 'delete', boarding_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to t('btn.movie.new'), new_boarding_card_path , class: "btn" %>
+
 </div>

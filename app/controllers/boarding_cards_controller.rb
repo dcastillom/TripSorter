@@ -1,16 +1,37 @@
 class BoardingCardsController < ApplicationController
   before_action :set_boarding_card, only: [:show, :edit, :update, :destroy]
 
-  # GET /boarding_cards
-  # GET /boarding_cards.json
+
+
   def index
     @boarding_cards = BoardingCard.all
+    swapped = true
+    while swapped
+      swapped = false
+      0.upto(@boarding_cards.size-2) do |i|
+        if @boarding_cards[i].to != @boarding_cards[i+1].from
+        @boarding_cards[i], @boarding_cards[i+1] = @boarding_cards[i+1], @boarding_cards[i]
+        swapped = true
+      end
+    end
+  end
+
   end
 
   # GET /boarding_cards/1
   # GET /boarding_cards/1.json
   def show
     @boarding_cards = BoardingCard.all
+      swapped = true
+      while swapped
+        swapped = false
+        0.upto(@boarding_cards.size-2) do |i|
+          if @boarding_cards[i].to != @boarding_cards[i+1].from
+        @boarding_cards[i], @boarding_cards[i+1] = @boarding_cards[i+1], @boarding_cards[i]
+        swapped = true
+      end
+    end
+  end
   end
 
   # GET /boarding_cards/new

@@ -44,7 +44,7 @@
 </p>
 
 <ul>
-    <% @boarding_cards.sort.each do |card| %>
+    <% @boarding_cards.each do |card| %>
       <% if card.id >= @boarding_card.id%>
         <li><%= card.directions %></li>
       <% end %>
